@@ -1,0 +1,13 @@
+<h1>Asistencias</h1>
+
+<a href="/crear/">Nueva asistencia</a>
+
+<ul>
+  {% for a in asistencias %}
+    <li>
+      {{ a.nombre }} - {{ a.fecha }} - {{ a.presente }}
+      <a href="/editar/{{ a.id }}/">Editar</a>
+      <a href="/eliminar/{{ a.id }}/">Eliminar</a>
+    </li>
+  {% endfor %}
+</ul>
