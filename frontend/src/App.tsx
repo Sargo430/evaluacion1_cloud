@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/asistencias" element={<Lista />} />
           <Route path="/crear" element={<FormPage />} />
+          <Route path="/editar/:id" element={<FormPage />} />
         </Routes>
       </div>
     </div>

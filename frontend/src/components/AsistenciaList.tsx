@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Asistencia } from "../types/Asistencia";
-
+import { useNavigate } from "react-router-dom";
 interface Props {
   asistencias: Asistencia[];
   onDelete: (id: number) => void;
@@ -19,7 +19,7 @@ export const AsistenciaList = ({
   onClearDateFilter,
 }: Props) => {
   const hasFilter = dateFilter.length > 0;
-
+  const navigate = useNavigate();
   return (
     <div className="mt-6">
       <div className="mb-3 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -86,11 +86,11 @@ export const AsistenciaList = ({
 
             <div className="flex gap-2">
               <button
-                onClick={() => onEdit(a)}
-                className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
-              >
-                Editar
-              </button>
+  onClick={() => navigate(`/editar/${a.id}`)}
+  className="px-3 py-1 text-sm bg-blue-500 text-white rounded"
+>
+  Editar
+</button>
               <button
                 onClick={() => onDelete(a.id!)}
                 className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600"

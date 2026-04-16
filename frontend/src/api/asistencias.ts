@@ -1,9 +1,9 @@
 import type { Asistencia } from "../types/Asistencia";
 
-const API_URL = "http://127.0.0.1:8000/api/asistencias/";
+const API_URL = "/api/asistencias/";
 
-export const getAsistencias = async (): Promise<Asistencia[]> => {
-  const res = await fetch(API_URL);
+export const getAsistencia = async (id: number) => {
+  const res = await fetch(`${API_URL}${id}/`);
   return res.json();
 };
 
