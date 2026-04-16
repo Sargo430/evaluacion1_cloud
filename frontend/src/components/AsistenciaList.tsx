@@ -13,7 +13,6 @@ interface Props {
 export const AsistenciaList = ({
   asistencias,
   onDelete,
-  onEdit,
   dateFilter,
   onDateFilterChange,
   onClearDateFilter,
