@@ -32,3 +32,12 @@ export const deleteAsistencia = async (id: number) => {
     method: "DELETE",
   });
 };
+export const getAsistencias = async (): Promise<Asistencia[]> => {
+  const res = await fetch(API_URL);
+
+  if (!res.ok) {
+    throw new Error("Error al obtener asistencias");
+  }
+
+  return res.json();
+};
