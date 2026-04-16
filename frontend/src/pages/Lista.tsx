@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAsistencias, deleteAsistencia } from "../api/asistencias";
+import { getAsistencia, deleteAsistencia } from "../api/asistencias";
 import { AsistenciaList } from "../components/AsistenciaList";
 import type { Asistencia } from "../types/Asistencia";
 
@@ -8,7 +8,7 @@ export const Lista = () => {
   const [dateFilter, setDateFilter] = useState("");
 
   const load = async () => {
-    const res = await getAsistencias();
+    const res = await getAsistencia(0);
     setData(res);
   };
 
