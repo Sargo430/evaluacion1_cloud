@@ -32,10 +32,7 @@ export const Lista = () => {
         await deleteAsistencia(id);
         load();
       }}
-      onEdit={(a) => {
-        // 👇 IMPORTANTE si ya hiciste lo de navegación
-        window.location.href = `/editar/${a.id}`;
-      }}
+     
       dateFilter={dateFilter}
       onDateFilterChange={setDateFilter}
       onClearDateFilter={() => setDateFilter("")}
